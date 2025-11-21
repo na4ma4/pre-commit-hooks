@@ -1,0 +1,25 @@
+-   id: terraform-fmt
+    name: terraform-fmt
+    description: Formats terraform scripts
+    entry: terraform fmt -check
+    language: script
+    files: \.tf$
+    exclude: \.terraform\/.*$
+-   id: terraform-validate
+    name: terraform-validate
+    description: Validates terraform scripts
+    entry: terraform validate
+    language: script
+    files: \.tf$
+    exclude: \.terraform\/.*$
+-   id: terraform-fmt-docker
+    name: terraform-fmt-docker
+    language: docker_image
+    entry: hashicorp/terraform:1.14 fmt
+    files: \.tf$
+    exclude: \.terraform\/.*$
+-   id: terraform-validate-docker
+    name: terraform-validate-docker
+    language: docker_image
+    entry: hashicorp/terraform:1.14 validate
+    pass_filenames: false
